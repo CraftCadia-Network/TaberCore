@@ -12,7 +12,7 @@ public class AddonFetcher {
 	
 	public static void downloadFileFromURL(String addonName, File destination) throws Throwable {
 		 
-		URL website = new URL("http:/cadia.us.to/job/" + addonName + "/lastSuccessfulBuild/artifact/target/" + addonName + ".jar");
+		URL website = new URL("http:/cadia.us.to:9090/job/" + addonName + "/lastSuccessfulBuild/artifact/" + addonName + ".jar");
 	      try(
 	              ReadableByteChannel rbc = Channels.newChannel(website.openStream());
 	              FileOutputStream fos = new FileOutputStream(destination);  
