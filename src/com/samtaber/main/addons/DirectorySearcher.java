@@ -22,20 +22,27 @@ public class DirectorySearcher {
 		return result;
 	  }
 
+	  public static void DirectSearch() {
+		  DirectorySearcher fileSearch = new DirectorySearcher();
+
+		  if(LoadAddon.addonName.equalsIgnoreCase("TaberCore_RANKS")) {
+			  
+			  fileSearch.searchDirectory(new File("D:\\CadiaHQ\\Test Server\\plugins\\TaberCore\\addons"), "TaberCore_RANKS.jar");
+			  int count = fileSearch.getResult().size();
+				if(count ==0){
+				    System.out.println("\nNo result found!");
+				    
+				}else{
+				    System.out.println("\nFound " + count + " result!\n");
+				    AddonHandler.AddonList.add("TaberCore_RANKS");
+				}
+			  }
+		  
+	  }
+	  
 	  public static void main(String[] args) {
 
-		DirectorySearcher fileSearch = new DirectorySearcher();
-	  if(LoadAddon.addonName.equalsIgnoreCase("TaberCore_RANKS")) {
-		  
-		  fileSearch.searchDirectory(new File("D:\\CadiaHQ\\Test Server\\plugins\\TaberCore\\addons"), "TaberCore_RANKS.jar");
-		  int count = fileSearch.getResult().size();
-			if(count ==0){
-			    System.out.println("\nNo result found!");
-			}else{
-			    System.out.println("\nFound " + count + " result!\n");
-			    AddonHandler.AddonList.add("TaberCore_RANKS");
-			}
-		  }
+		
 	  }
 	        //try different directory and filename :)
 		

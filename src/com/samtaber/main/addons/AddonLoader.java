@@ -18,6 +18,9 @@ public class AddonLoader {
 	public static void load() {
 		
 		if(LoadAddon.addonName.equalsIgnoreCase("TaberCore_RANKS")) {
+			
+			DirectorySearcher.DirectSearch();
+			
 			if(AddonHandler.AddonList.contains("TaberCore_RANKS")) {
 				
 				addon1 = "TaberCore_RANKS";

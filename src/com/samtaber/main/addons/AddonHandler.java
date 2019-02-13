@@ -5,7 +5,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tabercore.ranks.*;
 
 public class AddonHandler{
 static String Path = "plugins/TaberCore";
