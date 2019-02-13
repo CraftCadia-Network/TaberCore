@@ -8,6 +8,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import com.samtaber.main.addons.AddonHandler;
 import com.samtaber.main.addons.AddonLoader;
 import com.samtaber.main.addons.Downloader;
+import com.samtaber.main.addons.LoadAddon;
 import com.tabercore.main.AddonImplementation;
 import com.tabercore.ranks.HelloCommand;
 
@@ -26,6 +27,7 @@ public class Main extends JavaPlugin{
 		AddonHandler.Setup();
 		Bukkit.getServer().getConsoleSender().sendMessage(ChatColor.GREEN + "Loaded TaberCore");
 		this.getCommand("download").setExecutor((CommandExecutor)new Downloader());
+		this.getCommand("loadaddon").setExecutor((CommandExecutor)new LoadAddon());
 		onAddon();
 	}
 	

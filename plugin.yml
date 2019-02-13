@@ -5,4 +5,7 @@ main: com.samtaber.main.Main
 commands:
    download:
       aliases: dl
-      description: Load TaberAddon(s)
+      description: Download TaberAddon(s) from deployment server.
+   loadaddon:
+      aliases: loadadd
+      description: Load TaberAddon(s) into system.
