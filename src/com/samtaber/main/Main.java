@@ -5,8 +5,8 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.samtaber.main.addons.AddonFetcher;
 import com.samtaber.main.addons.AddonHandler;
+import com.samtaber.main.addons.Downloader;
 
 
 
@@ -18,7 +18,7 @@ public class Main extends JavaPlugin{
 		plugin = this;
 		AddonHandler.Setup();
 		Bukkit.getServer().getConsoleSender().sendMessage(ChatColor.GREEN + "Loaded TaberCore");
-		this.getCommand("downloadaddon").setExecutor((CommandExecutor)new AddonFetcher());
+		this.getCommand("download").setExecutor((CommandExecutor)new Downloader());
 	}
 	
 	public void onDisable() {
