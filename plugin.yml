@@ -3,5 +3,6 @@ author: Sam Taber
 version: 1.0
 main: com.samtaber.main.Main
 commands:
-   loadaddon:
+   download:
+      aliases: dl
       description: Load TaberAddon(s)

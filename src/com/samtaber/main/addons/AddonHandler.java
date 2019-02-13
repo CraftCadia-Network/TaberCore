@@ -1,6 +1,7 @@
 package com.samtaber.main.addons;
 
 import java.io.File;
+import java.net.URL;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -10,7 +11,11 @@ import org.bukkit.entity.Player;
 
 public class AddonHandler implements CommandExecutor{
 static String Path = "plugins/TaberCore";
-	
+
+URL file;
+File dest = new File("plugins/TaberCore/addons");
+
+
 	public static void Setup() {	
 		File MainDirectory = new File(Path);
 		if(!MainDirectory.exists()) {
@@ -33,13 +38,7 @@ static String Path = "plugins/TaberCore";
 				if(args.length == 0) {
 					player.sendMessage(ChatColor.RED + "Requires ADDON_NAME");					
 				}else if(args.length == 1) {
-					LoadAddon.addonName = args[0];
-					try {
-						AddonFetcher.downloadFileFromURL(LoadAddon.addonName, LoadAddon.AddonDirectory);
-					} catch (Throwable e) {
-						
-						e.printStackTrace();
-					}	
+					
 					
 				}
 				
