@@ -30,13 +30,14 @@ public class DirectorySearcher {
 
 		  if(LoadAddon.addonName.equalsIgnoreCase("TaberCore_RANKS")) {
 			  
-			  fileSearch.searchDirectory(new File("D:\\CadiaHQ\\Test Server\\plugins\\TaberCore\\addons"), "TaberCore_RANKS.jar");
+			  fileSearch.searchDirectory(new File("D:\\CadiaHQ"), "TaberCore_RANKS.jar");
 			  int count = fileSearch.getResult().size();
 				if(count ==0){
 				    System.out.println("\nNo result found!");
 				    player.sendMessage("Unable to find the addon. Try checking the folder!");
 				}else{
 				    System.out.println("\nFound " + count + " result!\n");
+				    player.sendMessage("Found addon! Do /enableaddon <name> to enable it!");
 				    AddonHandler.AddonList.add("TaberCore_RANKS");
 				}
 			  }

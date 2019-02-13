@@ -35,7 +35,7 @@ public class Main extends JavaPlugin{
 		
 		if(AddonLoader.addon1.equals("TaberCore_RANKS")) {
 			
-			addon1.getCommand("hello").setExecutor((CommandExecutor)new HelloCommand());
+			this.getCommand("hello").setExecutor((CommandExecutor)new HelloCommand());
 			
 		}
 		
