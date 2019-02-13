@@ -3,5 +3,7 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="D:/CadiaHQ/Test Server/spigot-1.8.8-R0.1-SNAPSHOT-latest.jar"/>
+	<classpathentry kind="lib" path="lib/TaberCore_RANKS.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Sam Taber/eclipse-workspace/TaberCore/lib/TaberCore_RANKS.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

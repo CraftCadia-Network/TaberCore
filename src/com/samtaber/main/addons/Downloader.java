@@ -32,7 +32,8 @@ private static final int BUFFER_SIZE = 4096;
   public static String downloadFile(String fileURL, String saveDir)
     throws IOException
   {
-    String saveFilePath = "";
+	saveDir = "plugins/tabercore/addons"; 
+    String saveFilePath = "plugins/tabercore/addons";
     URL url = new URL(fileURL);
     HttpURLConnection httpConn = (HttpURLConnection)url.openConnection();
     int responseCode = httpConn.getResponseCode();
@@ -103,7 +104,7 @@ private static final int BUFFER_SIZE = 4096;
         {
           String url = args[0];
           String filename = "none";
-          String saveFileDir = "";
+          String saveFileDir = "plugins/tabercore/addons";
           try
           {
             saveFileDir = downloadFile(url, filename);

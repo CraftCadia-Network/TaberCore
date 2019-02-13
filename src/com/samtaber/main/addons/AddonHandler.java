@@ -2,21 +2,22 @@ package com.samtaber.main.addons;
 
 import java.io.File;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
-import org.bukkit.ChatColor;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
-import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
+import com.tabercore.ranks.*;
 
-public class AddonHandler implements CommandExecutor{
+public class AddonHandler{
 static String Path = "plugins/TaberCore";
 
 URL file;
 File dest = new File("plugins/TaberCore/addons");
 
 
-	public static void Setup() {	
+public static final List<String> AddonList = new ArrayList<String>();
+
+
+public static void Setup() {	
 		File MainDirectory = new File(Path);
 		if(!MainDirectory.exists()) {
 			MainDirectory.mkdir();	
@@ -29,23 +30,16 @@ File dest = new File("plugins/TaberCore/addons");
 		}
 	}
 
-	@Override
-	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		Player player = (Player) sender;
-		if(sender.hasPermission("core.addon.load")) {
-		if(label.equalsIgnoreCase("loadaddon")) {
+	public static void enableAddon() {
+		
+
+		if(AddonList.contains("TaberCore_RANKS")) {
 			
-				if(args.length == 0) {
-					player.sendMessage(ChatColor.RED + "Requires ADDON_NAME");					
-				}else if(args.length == 1) {
-					
-					
-				}
-				
 			
 			
 		}
-		}
-		return false;
+		
 	}
+	
+
 }
