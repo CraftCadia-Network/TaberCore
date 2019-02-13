@@ -9,15 +9,19 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class AddonHandler implements CommandExecutor{
-static String Path = "plugins/TaberCore/addons";
+static String Path = "plugins/TaberCore";
 	
 	public static void Setup() {	
 		File MainDirectory = new File(Path);
 		if(!MainDirectory.exists()) {
 			MainDirectory.mkdir();	
 		}
-		
-		
+		File AddonDir = new File(Path + "/addons");
+		if(!AddonDir.exists()) {
+			
+			AddonDir.mkdir();
+			
+		}
 	}
 
 	@Override

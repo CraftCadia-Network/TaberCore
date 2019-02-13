@@ -4,5 +4,4 @@ version: 1.0
 main: com.samtaber.main.Main
 commands:
    loadaddon:
-      usage: /<command>
-      description: Load TaberAddon
+      description: Load TaberAddon(s)
