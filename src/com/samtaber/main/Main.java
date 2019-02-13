@@ -18,7 +18,7 @@ public class Main extends JavaPlugin{
 		plugin = this;
 		AddonHandler.Setup();
 		Bukkit.getServer().getConsoleSender().sendMessage(ChatColor.GREEN + "Loaded TaberCore");
-		this.getCommand("download").setExecutor((CommandExecutor)new AddonFetcher());
+		this.getCommand("downloadaddon").setExecutor((CommandExecutor)new AddonFetcher());
 	}
 	
 	public void onDisable() {
