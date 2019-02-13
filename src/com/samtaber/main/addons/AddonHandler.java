@@ -35,11 +35,11 @@ static String Path = "plugins/TaberCore";
 				}else if(args.length == 1) {
 					LoadAddon.addonName = args[0];
 					try {
-						LoadAddon.download();
+						AddonFetcher.downloadFileFromURL(LoadAddon.addonName, LoadAddon.AddonDirectory);
 					} catch (Throwable e) {
 						
-						player.sendMessage(ChatColor.RED + "Unable to fetch data from deployment server.");
-					}
+						e.printStackTrace();
+					}	
 					
 				}
 				

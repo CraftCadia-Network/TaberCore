@@ -8,12 +8,10 @@ public class LoadAddon {
 	public static String addonName = null;
 		
 	
-		public static void download() throws Throwable {
 			
-			AddonFetcher.downloadFileFromURL(addonName, AddonDirectory);	
 			
-		}
-		
+			
+	
 
 	
 	
