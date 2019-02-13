@@ -1,5 +1,7 @@
 package com.samtaber.main.addons;
 
+import org.bukkit.entity.Player;
+
 public class AddonLoader {
 
 	public static String addonName = null;
@@ -15,11 +17,11 @@ public class AddonLoader {
 	public static String addon10 = null;
 	
 	
-	public static void load() {
+	public static void load(Player player) {
 		
 		if(LoadAddon.addonName.equalsIgnoreCase("TaberCore_RANKS")) {
 			
-			DirectorySearcher.DirectSearch();
+			DirectorySearcher.DirectSearch(player);
 			
 			if(AddonHandler.AddonList.contains("TaberCore_RANKS")) {
 				

@@ -28,7 +28,7 @@ public class LoadAddon implements CommandExecutor{
 				}else if(args.length == 1) {
 					
 					addonName = args[0];
-					AddonLoader.load();
+					AddonLoader.load(player);
 					
 				}
 				

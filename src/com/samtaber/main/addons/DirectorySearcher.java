@@ -4,6 +4,8 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.bukkit.entity.Player;
+
 public class DirectorySearcher {
 
 
@@ -22,7 +24,8 @@ public class DirectorySearcher {
 		return result;
 	  }
 
-	  public static void DirectSearch() {
+	  public static void DirectSearch(Player player) {
+		 
 		  DirectorySearcher fileSearch = new DirectorySearcher();
 
 		  if(LoadAddon.addonName.equalsIgnoreCase("TaberCore_RANKS")) {
@@ -31,7 +34,7 @@ public class DirectorySearcher {
 			  int count = fileSearch.getResult().size();
 				if(count ==0){
 				    System.out.println("\nNo result found!");
-				    
+				    player.sendMessage("Unable to find the addon. Try checking the folder!");
 				}else{
 				    System.out.println("\nFound " + count + " result!\n");
 				    AddonHandler.AddonList.add("TaberCore_RANKS");
