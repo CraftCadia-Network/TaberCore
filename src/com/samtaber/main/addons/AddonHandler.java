@@ -23,8 +23,9 @@ static String Path = "plugins/TaberCore/addons";
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		Player player = (Player) sender;
+		if(sender.hasPermission("core.addon.load")) {
 		if(label.equalsIgnoreCase("loadaddon")) {
-			if(sender.hasPermission("core.addon.load")) {
+			
 				if(args.length == 0) {
 					player.sendMessage(ChatColor.RED + "Requires ADDON_NAME");					
 				}else if(args.length == 1) {
@@ -38,8 +39,9 @@ static String Path = "plugins/TaberCore/addons";
 					
 				}
 				
-			}
 			
+			
+		}
 		}
 		return false;
 	}
