@@ -9,9 +9,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class AddonHandler implements CommandExecutor{
-String Path = "plugins/TaberCore/addons";
+static String Path = "plugins/TaberCore/addons";
 	
-	public void Setup() {	
+	public static void Setup() {	
 		File MainDirectory = new File(Path);
 		if(!MainDirectory.exists()) {
 			MainDirectory.mkdir();	
@@ -22,20 +22,25 @@ String Path = "plugins/TaberCore/addons";
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		
-		Player p = (Player) sender;
-		File RankAddon = new File(Path + "/TaberRanks.jar");
-		if(!RankAddon.exists()) {
-			
-			p.sendMessage(ChatColor.RED + "That Addon is not installed in the folder. Please check!");
-			
-		}else {
-			
-			
+		Player player = (Player) sender;
+		if(label.equalsIgnoreCase("loadaddon")) {
+			if(sender.hasPermission("core.addon.load")) {
+				if(args.length == 0) {
+					player.sendMessage(ChatColor.RED + "Requires ADDON_NAME");					
+				}else if(args.length == 1) {
+					LoadAddon.addonName = args[0];
+					try {
+						LoadAddon.download();
+					} catch (Throwable e) {
+						
+						player.sendMessage(ChatColor.RED + "Unable to fetch data from deployment server.");
+					}
+					
+				}
+				
+			}
 			
 		}
-		
-		
 		return false;
 	}
 }
